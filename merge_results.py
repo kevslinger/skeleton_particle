@@ -51,11 +51,12 @@ def do_stuff(directory):
 
 # Run Script
 if __name__ == '__main__':
-    import argparse
+    '''import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('directory')
     args = parser.parse_args()
     path = args.directory
-    
+    '''
+    path = os.getcwd()
     do_stuff(path)
     
