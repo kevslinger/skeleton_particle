@@ -34,14 +34,14 @@ def do_stuff(directory):
         skeleton = pd.read_csv(os.path.join(skeleton_path, skeleton_files[i]))
         skeleton = skeleton[skeleton['# Branches'] == max(skeleton['# Branches'])]
         skeleton.reset_index(drop=True, inplace=True)
-        skele_df = pd.concat([skele_df, skeleton.iloc[0]], ignore_index=True, sort=False)
+        skele_df = pd.concat([skele_df, skeleton.iloc(0)], ignore_index=True, sort=False)
         skele_df['Filename'].iloc[i] = skeleton_files[i]
         # Read in particle csv and add the representative particle from image.
         particle = pd.read_csv(os.path.join(particle_path, particle_files[i]))
         particle.drop(axis=1, columns=[" "], inplace=True)
         particle = particle[particle['Area'] == max(particle['Area'])]
         particle.reset_index(drop=True, inplace=True)
-        particle_df = pd.concat([particle_df, particle], ignore_index=True, sort=False)
+        particle_df = pd.concat([particle_df, particle.iloc(0)], ignore_index=True, sort=False)
         particle_df['Filename'].iloc[i] = particle_files[i]
     # After the loop, sort the dataframes by filename, and then rearrange the columns so filename is the first column, then export.
     skele_df.sort_values(by=['Filename'], inplace=True)
