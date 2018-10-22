@@ -1,7 +1,8 @@
 # skeleton_particle
 A directory to be the framework to hold cropped microglial images, skeleton and particle analyses, and them merged.
 
-How do I get what I want from this repository?
+# How do I get what I want from this repository? #
+
 Well, I'm glad you asked!!
 First is to put all your tif (or tiff) images in the Images folder. Then, install and run Leahsaurus.ijm in Fiji, choosing the Images directory. 
 
